@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+// ## Colors
+
+// ### Primary
+
+$BrightOrange: hsl(31, 77%, 52%);
+$DarkCyan: hsl(184, 100%, 22%);
+$VeryDarkCyan: hsl(179, 100%, 13%);
+
+// ### Neutral
+
+$TransparentWhite: hsla(0, 0%, 100%, 0.75); //Paragraphs
+$VeryLightGray: hsl(0, 0%, 95%); //(background, headings, buttons)
+
+// font family
+
+// font-family: 'Big Shoulders Display', cursive;
+// font-family: 'Lexend Deca', sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+%btn {
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  margin-block: 5rem 1rem;
+  cursor: pointer;
+
+  &:hover{
+    background-color: transparent;
+    color: #fff;
+    outline: 1px solid #fff;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+%card {
+  padding: 3rem 5.5rem;
+
+  .icon {
+    margin: 2rem 0;
+  }
+
+  .title {
+    font-size: 2.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Big Shoulders Display", cursive;
+    margin: 2rem 0;
+  }
+
+  .description {
+    color: $TransparentWhite;
+    font-size: 1.2rem;
+    line-height: 2;
+    margin: 2rem 0;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  background-color: $TransparentWhite;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  place-items: center;
+  margin: 2rem;
+
+  .sedan-card {
+    @extend %card;
+    background-color: $BrightOrange;
+
+    .sedan-btn {
+      @extend %btn;
+      color: $BrightOrange;
+    }
+  }
+
+  .suv-card {
+    @extend %card;
+    background-color: $DarkCyan;
+
+    .suv-btn {
+      @extend %btn;
+      color: $DarkCyan;
+    }
+  }
+
+  .luxury-card {
+    @extend %card;
+    background-color: $VeryDarkCyan;
+
+    .luxury-btn {
+      @extend %btn;
+      color: $VeryDarkCyan;
+    }
+  }
+}
